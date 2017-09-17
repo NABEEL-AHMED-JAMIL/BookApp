@@ -2,7 +2,7 @@ import { Component  } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { UserService } from '../../app/service/user.service';
 import { User } from '../../app/model/user';
-import { Role} from '../../app/model/role';
+// import { Role} from '../../app/model/role';
 import { LoginPage } from '../login/login';
 
 
@@ -15,10 +15,11 @@ export class RegistorPage {
 
   private user:User;
   private status: String;
-  private roles: Array<Role>;
+  // private roles: Array<Role>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private userService: UserService) {
     this.user = new User();
+    this.getRole();
   }
   public register(): any{
     console.log("Register......call");
@@ -32,7 +33,7 @@ export class RegistorPage {
   }
 
   public getRole(): any {
-     this.roles = this.userService.getRole();
+     console.log(this.userService.getRole());
   }
 
 

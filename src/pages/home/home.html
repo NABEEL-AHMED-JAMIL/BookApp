@@ -1,16 +1,19 @@
-<ion-header>
-    <ion-navbar>
-        <ion-title>Book App</ion-title>
-    </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-    <button ion-button clear (click)="register()">Register</button>
-    <br>
-    <button ion-button clear (click)="login()">Login</button>
-    <br>
-    <!-- this able to view the list but not able to view whole list detail -->
-    <button ion-button clear (click)="listView()">View Book</button>
+<ion-content class="home-content" padding>
+    <div class="home-box">
+        <ion-row>
+            <ion-col>
+                <ion-list inset>
+                    <ion-item>
+                        <button ion-button clear (click)="register()">Register</button>
+                    </ion-item>
+                    <ion-item>
+                        <button ion-button clear (click)="login()">Login</button>
+                    </ion-item>
+                    <ion-item>
+                        <button ion-button clear (click)="listView()">View Book</button>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </div>
 </ion-content>

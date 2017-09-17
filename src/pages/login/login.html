@@ -2,22 +2,28 @@
     <ion-navbar>
         <ion-title>login</ion-title>
     </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-    <ion-list>
-        <ion-item>
-            <ion-label floating>Username</ion-label>
-            <ion-input type="email" [(ngModel)]="dUser.email" required></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Password</ion-label>
-            <ion-input type="password" [(ngModel)]="dUser.password" required></ion-input>
-        </ion-item>
-    </ion-list>
-    <div padding>
-        <button ion-button clear (click)="login()">Login</button>
+<ion-content class="login-content" padding>
+    <div class="login-box">
+        <form (ngSubmit)="login()" #registerForm="ngForm">
+            <ion-row>
+                <ion-col>
+                    <ion-list inset>
+                        <ion-item>
+                            <ion-input type="email" name="email" [(ngModel)]="dUser.email" placeholder="Email" required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input type="password" name="password" [(ngModel)]="dUser.password" placeholder="Password" required></ion-input>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="signup-col">
+                    <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+                </ion-col>
+            </ion-row>
+        </form>
     </div>
 </ion-content>
