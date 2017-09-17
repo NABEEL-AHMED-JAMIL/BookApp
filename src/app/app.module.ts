@@ -16,6 +16,7 @@ import { UserService } from '../app/service/user.service';
 //--------firebasae------
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 const firebase = {
   apiKey: "AIzaSyC_wT7ytJ_wYjyug_9tXAuuxbgUXzmGvRc",
@@ -52,6 +53,7 @@ const firebase = {
   providers: [
     BookService,
     UserService,
+    AngularFireDatabase,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

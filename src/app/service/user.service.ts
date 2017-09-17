@@ -2,17 +2,20 @@ import { User } from "../model/user";
 import { DUser } from "../dto/duser";
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Role} from '../../app/model/role';
 
 
 @Injectable()
-export class UserService{
+export class UserService {
 
-    private roles: Array<Role> = [ { id: 1, role: "ADMIN"}, { id: 1, role: "USER"}];
+     private users: FirebaseListObservable<User[]>;
+     private roles: FirebaseListObservable<Role[]>;
 
-    constructor(private afAuth: AngularFireAuth) {}
+    constructor(private afAuth: AngularFireAuth, private afd: AngularFireDatabase) {}
 
     public login(dUser: DUser): any {
+        console.log("get the roles");
         this.afAuth.auth.signInWithEmailAndPassword(dUser.email, dUser.password)
         .then(resolve => {
             console.log(resolve);
@@ -24,6 +27,8 @@ export class UserService{
     }
     
     public registor(user: User): any {
+        this.users = this.afd.list('/users');
+        this.users.push(user);
        return this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
        .then(resolve => {
            // if this isresolve
@@ -50,10 +55,10 @@ export class UserService{
     }
 
     public getRole(): any{
-        return null;
+        return this.roles = this.afd.list('/roles');;
     }
 
-    public saveRole(){
+    public saveRole(role: Role){
         // save the role
     }
 }

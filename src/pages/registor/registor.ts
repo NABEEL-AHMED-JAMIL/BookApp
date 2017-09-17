@@ -5,6 +5,7 @@ import { User } from '../../app/model/user';
 import { Role} from '../../app/model/role';
 import { LoginPage } from '../login/login';
 
+
 @Component({
   selector: 'page-registor',
   templateUrl: 'registor.html',

@@ -5,7 +5,7 @@ export class Book{
     public author:String;
     public isbn:String;
     public noCopies:Number;
-    public price:DoubleRange;
+    public price:any;
 
     constructor(){}
 }
