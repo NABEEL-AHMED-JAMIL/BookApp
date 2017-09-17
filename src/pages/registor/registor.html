@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>registor</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <!-- used the lable -->
+            <ion-label floating>UserName</ion-label>
+            <ion-input type="text" [(ngModel)]="user.name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>First Name</ion-label>
+            <ion-input type="text" [(ngModel)]="user.firstName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Last Name</ion-label>
+            <ion-input type="text" [(ngModel)]="user.lastName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Phone</ion-label>
+            <ion-input type="text" [(ngModel)]="user.phone"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-label>Role</ion-label>
+            <ion-select [(ngModel)]="user.role">
+                <ion-option *ngFor="let x of roles" [value]="x">{{x.role}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <!-- used check box -->
+            <ion-label floating>Phone</ion-label>
+            <ion-input type="text" [(ngModel)]="user.phone"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div padding>
+        <button ion-button clear (click)="register()">Register</button>
+    </div>
+</ion-content>

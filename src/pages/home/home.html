@@ -1,14 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Book App</ion-title>
+    </ion-navbar>
+
 </ion-header>
 
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <button ion-button clear (click)="register()">Register</button>
+    <br>
+    <button ion-button clear (click)="login()">Login</button>
+    <br>
+    <!-- this able to view the list but not able to view whole list detail -->
+    <button ion-button clear (click)="listView()">View Book</button>
 </ion-content>

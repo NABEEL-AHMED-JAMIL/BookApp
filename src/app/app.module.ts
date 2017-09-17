@@ -5,23 +5,53 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+// ------page-------------
 import { HomePage } from '../pages/home/home';
+import { RegistorPage } from '../pages/registor/registor';
+import { LoginPage } from '../pages/login/login';
+import { MainPage } from '../pages/main/main';
+//-------Service---------
+import { BookService } from '../app/service/book.service';
+import { UserService } from '../app/service/user.service';
+//--------firebasae------
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+const firebase = {
+  apiKey: "AIzaSyC_wT7ytJ_wYjyug_9tXAuuxbgUXzmGvRc",
+  authDomain: "bookapp-4f34d.firebaseapp.com",
+  databaseURL: "https://bookapp-4f34d.firebaseio.com",
+  projectId: "bookapp-4f34d",
+  storageBucket: "bookapp-4f34d.appspot.com",
+  messagingSenderId: "792290640296"
+};
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage,
+    RegistorPage,
+    MainPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebase),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
+  
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage,
+    RegistorPage,
+    MainPage
   ],
   providers: [
+    BookService,
+    UserService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
