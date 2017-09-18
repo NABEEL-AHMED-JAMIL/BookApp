@@ -16,7 +16,11 @@ import { UserService } from '../app/service/user.service';
 //--------firebasae------
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabase } from 'angularfire2/database';
+// import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+// import { AngularFireOfflineModule } from 'angularfire2-offline';
+
+
 
 const firebase = {
   apiKey: "AIzaSyC_wT7ytJ_wYjyug_9tXAuuxbgUXzmGvRc",
@@ -39,7 +43,8 @@ const firebase = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   
@@ -53,7 +58,7 @@ const firebase = {
   providers: [
     BookService,
     UserService,
-    AngularFireDatabase,
+    // AngularFireDatabase,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

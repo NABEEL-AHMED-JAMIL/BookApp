@@ -7,7 +7,7 @@ page-login {
         }
         .login-box {
             background: #399F8B;
-            padding: 20px 20px 0px 20px;
+            // padding: 20px 20px 0px 20px;
             margin-top: 30px;
         }
         ion-row {
@@ -39,6 +39,17 @@ page-login {
         .register-btn {
             color: #ffffff;
             font-size: 0.8em;
+        }
+        .fb {
+            background: #3B5998 url('../../assets/images/facebook.svg') no-repeat 5px -14px;
+            background-size: 47px;
+            color: #fff;
+        }
+        .google {
+            border: 1px solid #95989A;
+            background: #fff url('../../assets/images/google.svg') no-repeat 25px;
+            background-size: 25px;
+            color: black;
         }
     }
 }
